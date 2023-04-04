@@ -20,3 +20,18 @@ and load the dependencies needed for these scripts therein
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+
+Make an account with [openai](https://chat.openai.com/auth/login) 
+and then copy you [api key](https://platform.openai.com/account/api-keys)
+into a `.env` file like so:
+
+```
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+Finally, run `main.py` to output a list of models 
+you have access to with your account like so:
+
+```bash
+python main.py
+```
