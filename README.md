@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ```
 
 Make an account with [openai](https://chat.openai.com/auth/login) 
-and then copy you [api key](https://platform.openai.com/account/api-keys)
+and then copy your [api key](https://platform.openai.com/account/api-keys)
 into a `.env` file like so:
 
 ```
