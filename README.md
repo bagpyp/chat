@@ -21,17 +21,29 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Also, run this pre-commit setup script so that code quality 
+can be enforced using `black` before contributions are added to version control
+
+```bash
+pre-commit install
+```
+
 Make an account with [openai](https://chat.openai.com/auth/login) 
-and then copy your [api key](https://platform.openai.com/account/api-keys)
+and then copy your [api key](https://platform.openai.com/account/api-keys) 
+and [organization id](https://platform.openai.com/docs/api-reference/authentication)
 into a `.env` file like so:
 
 ```
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+OPENAI_API_ORG=org-xxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Finally, run `main.py` to output a list of models 
-you have access to with your account like so:
+## To Run
+
+Run `app.py`  and navigate to http://127.0.0.1:5000
+in your browser to output a list of models 
+you have access to with your account:
 
 ```bash
-python main.py
+python app.py
 ```
