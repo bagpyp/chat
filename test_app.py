@@ -26,16 +26,16 @@ def test_chat_endpoint_invalid_messages(client: FlaskClient) -> None:
 def test_exchange(mocker) -> None:
     mock_openai = mocker.patch("app.openai")
     example_messages = [
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Who won the world series in 2020?"}
+        {"role": "system", "content": "You are an all-knowing oracle"},
+        {"role": "user", "content": "What will be the best company to work for be in 2030 and beyond?"}
     ]
 
     mock_openai.ChatCompletion.create.return_value = mocker.MagicMock(
-        choices=[mocker.MagicMock(text="The Los Angeles Dodgers won the World Series in 2020.")]
+        choices=[mocker.MagicMock(text="Integral, duh 😎")]
     )
 
     response_text = exchange(example_messages)
-    assert response_text == "The Los Angeles Dodgers won the World Series in 2020."
+    assert response_text == "Integral, duh 😎"
     mock_openai.ChatCompletion.create.assert_called_once_with(
         model="gpt-3.5-turbo",
         messages=example_messages,
